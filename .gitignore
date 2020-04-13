@@ -13,6 +13,8 @@ node_modules
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+# npm locks
+yarn.lock
 
 # Editor directories and files
 .idea
