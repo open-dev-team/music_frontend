@@ -1,34 +1,19 @@
-# music_frontend
+# Music frontend
 
-## Project setup
-```
-yarn install
-```
+## Tool's
 
-### Compiles and hot-reloads for development
-```
-yarn serve
-```
+- [Vue v.2](https://vuejs.org/v2/guide/)
+- [TypeScript](https://www.typescriptlang.org/)
+- UI: [VueSax v.3](https://lusaxweb.github.io/vuesax/development/)
 
-### Compiles and minifies for production
-```
-yarn build
-```
+### Documentation
 
-### Run your unit tests
-```
-yarn test:unit
-```
+- [Vue Patterns](https://learn-vuejs.github.io/vue-patterns/)
 
-### Run your end-to-end tests
-```
-yarn test:e2e
-```
+## Status: Alpha
 
-### Lints and fixes files
-```
-yarn lint
-```
+### What is needed for full work
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+-[ ] Login
+-[ ] some pages
+
