@@ -14,6 +14,6 @@
 
 ### What is needed for full work
 
--[ ] Login
--[ ] some pages
+- [ ] Login
+- [ ] some pages
 
