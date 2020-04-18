@@ -66,11 +66,23 @@
 </template>
 
 <script lang="ts">
-import Vue from 'vue';
-import { Component, Watch, Prop } from 'vue-property-decorator';
+/*
+
+В целом не плохо, но использование watch дорогое удовольствие посмотри на компоненту:
+https://github.com/Bizhev/nuxt-express-sqlite/blob/master/components/sectionFormEvents/SectionFormEvents.vue
+я не говорю что он идеал, но принцип try catch очень важна
+TODO: 1. Переделать валидацию
+
+TODO: 2. Eslint - очень на меня ругается, не делай деплой с ошибками.
+P.S. Можно делать так для автофикса: npm run lint --fix
+Как все сделаешь, удали эти сообщения и делай пуш в development
+ */
+
+import { Component, Watch, Vue } from 'vue-property-decorator';
 
 @Component({})
 export default class RegisterForm extends Vue {
+  /*= == DATA === */
   username = {
     success: false,
     danger: false,
@@ -95,6 +107,7 @@ export default class RegisterForm extends Vue {
     value: '',
   };
 
+  /*= == WATCH === */
   @Watch('username.value')
   onUsernameChanged = (currentUsername: string, oldUsername: string) => {
     if (currentUsername.length < 5) {
@@ -110,6 +123,7 @@ export default class RegisterForm extends Vue {
   onFullnameChanged = (currentFullname: string, oldFullname: string) => {
     if (currentFullname.length < 6) {
       this.fullname.success = false;
+
       this.fullname.danger = true;
     } else {
       this.fullname.danger = false;
