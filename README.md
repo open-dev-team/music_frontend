@@ -1,6 +1,7 @@
 # Music frontend
 
 [DEMO](https://open-dev-team.github.io/music_frontend/)
+
 ## Tool's
 
 - [Vue v.2](https://vuejs.org/v2/guide/)
