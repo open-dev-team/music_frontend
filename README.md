@@ -1,5 +1,8 @@
 # Music frontend
 
+![Build Status](https://david-dm.org/open-dev-team/music_frontend.svg)
+[![Code Style](https://badgen.net/badge/code%20style/airbnb/ff5a5f?icon=airbnb)](https://github.com/airbnb/javascript)
+
 [DEMO](https://open-dev-team.github.io/music_frontend/)
 
 ## Tool's
