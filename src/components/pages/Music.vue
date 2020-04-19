@@ -14,24 +14,25 @@
   </div>
 </template>
 
-<script>
-export default {
-  data() {
-    return {
-      loading: false,
-      musicName: '',
-      authorName: '',
-      musicDescription: '',
-      coverUrl: '',
-    };
-  },
-  created() {
-    this.getMusicInfoRequest(this.id);
-  },
-  methods: {
-    getMusicInfoRequest(id) {
-      setTimeout(() => {
-        const mockUpData = [
+<script lang="ts">
+import Vue from 'vue';
+import { Component, Emit, Prop } from 'vue-property-decorator';
+
+    @Component({})
+export default class Music extends Vue {
+        /* === PROP'S === */
+        @Prop({}) id?: string;
+
+        /* === DATA === */
+        musicName = '';
+
+        authorName = '';
+
+        musicDescription = '';
+
+        coverUrl = '';
+
+        mockUpData = [
           {
             id: '1',
             musicName: 'In Your Eyes',
@@ -61,23 +62,32 @@ export default {
             coverUrl: 'https://avatars.yandex.net/get-music-content/149669/1c06a6dd.a.5803152-1/200x200',
           },
         ];
-        this.getMusicInfoResponce(mockUpData.filter((obj) => obj.id === id));
-      }, 200);
-    },
-    getMusicInfoResponce(responceObject) {
-      if (Array.isArray(responceObject) && responceObject.length > 0) {
-        const responceItem = responceObject[0];
-        this.musicName = responceItem.musicName;
-        this.authorName = responceItem.authorName;
-        this.musicDescription = responceItem.musicDescription;
-        this.coverUrl = responceItem.coverUrl;
-      }
-    },
-  },
-  props: {
-    id: String,
-  },
-};
+
+        @Emit()
+        created() {
+          if (this.id != null) {
+            this.getMusicInfoRequest(this.id);
+          }
+        }
+
+        @Emit()
+        getMusicInfoRequest(id: string) {
+          setTimeout(() => {
+            this.getMusicInfoResponce(this.mockUpData.filter((obj) => obj.id === id));
+          }, 1000);
+        }
+
+        @Emit()
+        getMusicInfoResponce(responceObject: object) {
+          if (Array.isArray(responceObject) && responceObject.length > 0) {
+            const responceItem = responceObject[0];
+            this.musicName = responceItem.musicName;
+            this.authorName = responceItem.authorName;
+            this.musicDescription = responceItem.musicDescription;
+            this.coverUrl = responceItem.coverUrl;
+          }
+        }
+}
 </script>
 
 <style scoped>
