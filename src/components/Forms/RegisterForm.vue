@@ -66,18 +66,6 @@
 </template>
 
 <script lang="ts">
-/*
-
-В целом не плохо, но использование watch дорогое удовольствие посмотри на компоненту:
-https://github.com/Bizhev/nuxt-express-sqlite/blob/master/components/sectionFormEvents/SectionFormEvents.vue
-я не говорю что он идеал, но принцип try catch очень важна
-TODO: 1. Переделать валидацию
-
-TODO: 2. Eslint - очень на меня ругается, не делай деплой с ошибками.
-P.S. Можно делать так для автофикса: npm run lint --fix
-Как все сделаешь, удали эти сообщения и делай пуш в development
- */
-
 import { Component, Watch, Vue } from 'vue-property-decorator';
 
 @Component({})
@@ -109,7 +97,7 @@ export default class RegisterForm extends Vue {
 
   /*= == WATCH === */
   @Watch('username.value')
-  onUsernameChanged = (currentUsername: string, oldUsername: string) => {
+  onUsernameChanged = (currentUsername: string) => {
     if (currentUsername.length < 5) {
       this.username.success = false;
       this.username.danger = true;
@@ -120,7 +108,7 @@ export default class RegisterForm extends Vue {
   };
 
   @Watch('fullname.value')
-  onFullnameChanged = (currentFullname: string, oldFullname: string) => {
+  onFullnameChanged = (currentFullname: string) => {
     if (currentFullname.length < 6) {
       this.fullname.success = false;
 
@@ -132,7 +120,7 @@ export default class RegisterForm extends Vue {
   };
 
   @Watch('email.value')
-  onEmailChanged = (currentEmail: string, oldEmail: string) => {
+  onEmailChanged = (currentEmail: string) => {
     if (/\S+@\S+\.\S+/.test(currentEmail)) {
       this.email.success = true;
       this.email.danger = false;
@@ -143,7 +131,7 @@ export default class RegisterForm extends Vue {
   };
 
   @Watch('password.value')
-  onPasswordChanged = (currentPassword: string, oldPassword: string) => {
+  onPasswordChanged = (currentPassword: string) => {
     if (currentPassword.length < 6) {
       this.password.success = false;
       this.password.danger = true;
