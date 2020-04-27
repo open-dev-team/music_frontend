@@ -6,6 +6,10 @@ import store from './store';
 
 import '@/plugins/index';
 
+import 'material-icons/iconfont/material-icons.css';
+
+import '@/styles/main.scss';
+
 Vue.config.productionTip = false;
 
 new Vue({
