@@ -38,6 +38,16 @@ const routes: Array<RouteConfig> = [
       }
     ),
   },
+  {
+    path: '/album',
+    name: 'Album',
+    component: () => import('@/components/pages/Album.vue'),
+    props: (route) => (
+      {
+        id: route.query.id,
+      }
+    ),
+  },
 ];
 
 const router = new VueRouter({
