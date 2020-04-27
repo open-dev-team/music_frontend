@@ -28,6 +28,16 @@ const routes: Array<RouteConfig> = [
     name: 'Login',
     component: () => import(/* webpackChunkName: "login" */ '@/views/Login.vue'),
   },
+  {
+    path: '/music',
+    name: 'Music',
+    component: () => import('@/components/pages/Music.vue'),
+    props: (route) => (
+      {
+        id: route.query.id,
+      }
+    ),
+  },
 ];
 
 const router = new VueRouter({
