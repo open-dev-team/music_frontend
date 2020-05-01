@@ -1,6 +1,7 @@
 #!/usr/bin/env sh
+echo "🤘✈"
 current_branch=$(git branch --show-current);
-message="Добавил в .gitignore lock файл 🤘";
+message="откорректировал скрипты push ✈";
 
 #npm run lint --fix
 # STOP error
