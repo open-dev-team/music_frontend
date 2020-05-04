@@ -2,40 +2,42 @@
   <form class="login-form">
     <vs-card>
       <div slot="header">
-        <h2>Login</h2>
+        <h2>{{$t('login_login_text')}}</h2>
         <p>
-          Don't have an account yet?
-          <vs-button to="/register" color="primary" type="flat">Register</vs-button>
+          {{$t('login_donthaveaccount_text')}}
+          <vs-button to="/register" color="primary" type="flat">{{$t('login_register_text')}}
+          </vs-button>
         </p>
       </div>
       <div>
         <vs-input
           size="large"
           type="email"
-          label-placeholder="Email"
+          :label-placeholder="$t('login_emailinput_text')"
           :succes="email.success"
-          success-text="Email is correct"
+          :success-text="$t('login_emailinput_error')"
           :danger="email.danger"
-          danger-text="User with this email was not found"
+          :danger-text="$t('login_emailinput_danger')"
           v-model="email.value"
         />
         <vs-input
           size="large"
           type="password"
-          label-placeholder="Password"
+          :label-placeholder="$t('login_passwordinput_text')"
           :succes="password.success"
-          success-text="Password is correct"
+          :success-text="$t('login_passwordinput_error')"
           :danger="password.danger"
-          danger-text="Password is incorrect"
+          :danger-text="$t('login_passwordinput_danger')"
           v-model="password.value"
         />
       </div>
       <div>
         <vs-row vs-justify="space-between">
-          <vs-checkbox>Remember me</vs-checkbox>
+          <vs-checkbox>{{$t('login_rememberme_text')}}</vs-checkbox>
           <div>
-            <vs-button color="primary">Login</vs-button>
-            <vs-button to="/" color="primary" type="flat">Forgot password?</vs-button>
+            <vs-button color="primary">{{$t('login_loginbutton_text')}}</vs-button>
+            <vs-button to="/" color="primary" type="flat">{{$t('login_forgotpasswordbutton_text')}}
+            </vs-button>
           </div>
         </vs-row>
       </div>

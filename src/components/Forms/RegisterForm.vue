@@ -2,63 +2,67 @@
   <form class="register-form">
     <vs-card>
       <div slot="header">
-        <h2>Register</h2>
+        <h2>{{$t('register_register_text')}}</h2>
         <p>
-          Already have an account?
-          <vs-button to="/login" color="primary" type="flat">Login</vs-button>
+          {{$t('register_alreadyhaveaccount_text')}}
+          <vs-button to="/login" color="primary" type="flat">{{$t('register_login_text')}}
+          </vs-button>
         </p>
       </div>
       <div>
         <vs-input
           size="large"
           type="text"
-          label-placeholder="Username"
+          :label-placeholder="$t('register_usernameinput_text')"
           :success="username.success"
-          success-text="Name must be at least 5 characters"
+          :success-text="$t('register_usernameinput_success')"
           :danger="username.danger"
-          danger-text="Name must be at least 5 characters"
-          description-text="Name must be at least 5 characters"
+          :danger-text="$t('register_usernameinput_danger')"
+          :description-text="$t('register_usernameinput_description')"
           v-model="username.value"
         />
         <vs-input
           size="large"
           type="text"
-          label-placeholder="Fullname"
+          :label-placeholder="$t('register_fullnameinput_text')"
           :success="fullname.success"
-          success-text="Name must be at least 6 characters"
+          :success-text="$t('register_fullnameinput_success')"
           :danger="fullname.danger"
-          danger-text="Name must be at least 6 characters"
-          description-text="Name must be at least 6 characters"
+          :danger-text="$t('register_fullnameinput_danger')"
+          :description-text="$t('register_fullnameinput_description')"
           v-model="fullname.value"
         />
         <vs-input
           size="large"
           type="email"
-          label-placeholder="Email"
+          :label-placeholder="$t('register_emailinput_text')"
           :success="email.success"
-          success-text="The email is valid"
+          :success-text="$t('register_emailinput_success')"
           :danger="email.danger"
-          danger-text="The email is not valid"
+          :danger-text="$t('register_emailinput_danger')"
           v-model="email.value"
         />
         <vs-input
           size="large"
           type="password"
-          label-placeholder="Password"
+          :label-placeholder="$t('register_passwordinput_text')"
           :success="password.success"
-          success-text="Password must be at least 6 characters"
+          :success-text="$t('register_passwordinput_success')"
           :danger="password.danger"
-          danger-text="Password must be at least 6 characters"
-          description-text="Password must be at least 6 characters"
+          :danger-text="$t('register_passwordinput_danger')"
+          :description-text="$t('register_passwordinput_description')"
           v-model="password.value"
         />
       </div>
       <div>
         <vs-row vs-justify="space-between">
           <vs-checkbox>
-            I agree to the <vs-button to="/" type="line">Terms and Privacy Policy</vs-button>
+            {{$t('register_iagree_text')}}
+            <vs-button to="/" type="line">
+              {{$t('register_termandprivacy_text')}}
+            </vs-button>
           </vs-checkbox>
-          <vs-button color="primary">Register</vs-button>
+          <vs-button color="primary">{{$t('register_registerbutton_text')}}</vs-button>
         </vs-row>
       </div>
     </vs-card>

@@ -3,15 +3,16 @@
     <vs-row vs-w="12">
       <vs-col>
         <Hero
-          title="Music for everyone"
-          subtitle="Repressors sunt historias de peritus exemplar"
+          :title="$t('topmusic_formtitle_text')"
+          :subtitle="$t('topmusic_formsubtitle_text')"
         />
       </vs-col>
     </vs-row>
     <vs-row vs-w="12" vs-type="flex" vs-justify="center">
       <vs-col vs-w="8" vs-sm="10">
         <vs-list>
-          <vs-list-header icon="grade" title="Popular Tracks" color="success"></vs-list-header>
+          <vs-list-header icon="grade" :title="$t('topmusic_populartracks_text')" color="success">
+          </vs-list-header>
           <vs-list-item
             v-for="topMusic in topMusicList"
             :key="topMusic.id"
@@ -29,7 +30,11 @@
     <vs-row vs-w="12" vs-type="flex" vs-justify="center">
       <vs-col vs-w="8" vs-sm="10">
         <vs-list>
-          <vs-list-header icon="new_releases" title="New Releases" color="danger"></vs-list-header>
+          <vs-list-header
+            icon="new_releases"
+            :title="$t('topmusic_newreleases_text')"
+            color="danger">
+          </vs-list-header>
           <vs-list-item
             v-for="newRelease in newReleaseList"
             :key="newRelease.id"
